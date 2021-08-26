@@ -1,6 +1,6 @@
 import React from "react";
-import { AppContainer } from "./styles";
+import { AppContainer, ColumnContainer } from "./styles";
 
 export const App = () => {
-  return <AppContainer />;
+  return <AppContainer></AppContainer>;
 };
