@@ -15,6 +15,7 @@ export const addTask = (text: string, listId: string): Action => ({
     listId,
   },
 });
+
 export const addList = (text: string): Action => ({
   type: "ADD_LIST",
   payload: text,
