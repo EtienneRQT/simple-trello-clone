@@ -1,4 +1,4 @@
-import { findItemIndexById } from "../utils/arrayUtils";
+import { findItemIndexById, moveItem } from "../utils/arrayUtils";
 import { Action } from "./actions";
 import { nanoid } from "nanoid";
 
@@ -20,6 +20,7 @@ export const appStateReducer = (
   action: Action
 ): AppState | void => {
   switch (action.type) {
+    
     case "ADD_LIST": {
       draft.lists.push({
         id: nanoid(),
