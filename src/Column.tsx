@@ -34,7 +34,7 @@ export const Column = ({ text, id }: ColumnProps) => {
   });
 
   const { drag } = useItemDrag({ type: "COLUMN", id, text });
-  drag(ref);
+  drag(drop(ref));
 
   return (
     <ColumnContainer ref={ref} isHidden={isHidden(draggedItem, "COLUMN", id)}>
