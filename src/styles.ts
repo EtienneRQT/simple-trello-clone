@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
-interface DragPreviewContainerProps {
+type AddItemButtonProps = {
+  dark?: boolean;
+};
+
+type DragPreviewContainerProps = {
   isHidden?: boolean;
-}
+  isPreview?: boolean;
+};
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
-  opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
+  transform: ${(props) => (props.isPreview ? "rotate(5deg)" : undefined)};
+  opacity: ${(props) => (props.isHidden ? 0 : 1)};
 `;
 
 export const AppContainer = styled.div`
@@ -42,10 +48,6 @@ export const CardContainer = styled(DragPreviewContainer)`
   border-radius: 3px;
   box-shadow: #091e4240 0px 1px 0px 0px;
 `;
-
-type AddItemButtonProps = {
-  dark?: boolean;
-};
 
 export const AddItemButton = styled.button<AddItemButtonProps>`
   background-color: #ffffff3d;
