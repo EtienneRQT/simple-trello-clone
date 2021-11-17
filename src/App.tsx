@@ -1,8 +1,8 @@
-import React from "react";
 import { useAppState } from "./state/AppStateContext";
 import { AppContainer } from "./styles";
 import { AddNewItem } from "./AddNewItem";
 import { Column } from "./Column";
+import { CustomDragLayer } from "./CustomDragLayer";
 import { addList } from "./state/actions";
 
 export const App = () => {
@@ -10,8 +10,9 @@ export const App = () => {
 
   return (
     <AppContainer>
+      <CustomDragLayer />
       {lists.map((list) => (
-        <Column text={list.text} key={list.id} id={list.id} />
+        <Column id={list.id} text={list.text} key={list.id} />
       ))}
       <AddNewItem
         toggleButtonText="+ Add another list"
